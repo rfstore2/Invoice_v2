@@ -5,7 +5,7 @@
  * Semua aset lokal: tidak ada ketergantungan CDN.
  */
 const PREFIX = "rpayment-";
-const CACHE = `${PREFIX}v3`;
+const CACHE = `${PREFIX}v2`;
 
 const ASSETS = [
   "./",

@@ -28,7 +28,7 @@ const SKEMA = {
   umum: {
     judul: "STRUK TRANSAKSI",
     fields: [
-      ["waktu", "Tanggal", "waktu"],
+      ["waktu", "Waktu Transaksi", "waktu"],
       ["produk", "Nama produk", "teks"],
       ["tujuan", "Nomor tujuan", "digit"],
       ["harga", "Harga", "uang"],
@@ -38,7 +38,7 @@ const SKEMA = {
   ewallet: {
     judul: "STRUK EWALLET",
     fields: [
-      ["waktu", "Tanggal", "waktu"],
+      ["waktu", "Waktu Transaksi", "waktu"],
       ["ref", "No. ref", "teks"]
       ["produk", "Nama produk", "teks"],
       ["tujuan", "Nomor tujuan", "digit"],
@@ -52,7 +52,7 @@ const SKEMA = {
   token: {
     judul: "STRUK TOKEN LISTRIK",
     fields: [
-      ["waktu", "Tanggal", "waktu"],
+      ["waktu", "Waktu Transaksi", "waktu"],
       ["produk", "Nama produk", "teks"],
       ["pelanggan", "ID pelanggan", "digit"],
       ["nama", "Nama", "teks"],
@@ -64,7 +64,7 @@ const SKEMA = {
   tagihan: {
     judul: "STRUK TAGIHAN LISTRIK",
     fields: [
-      ["waktu", "Tanggal", "waktu"],
+      ["waktu", "Waktu Transaksi", "waktu"],
       ["produk", "Nama produk", "teks"],
       ["tujuan", "Nomor tujuan", "digit"],
       ["pelanggan", "ID pelanggan", "digit"],

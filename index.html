@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#243195">
+  <meta name="color-scheme" content="light">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="RPayment">
+  <title>RPayment — Pembuat Struk PPOB</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./icons/icon-192.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="heading">
+        <div>
+          <h1>RPayment</h1>
+          <p>Pembuat struk transaksi PPOB</p>
+        </div>
+        <button id="install" class="install" type="button">
+          Pasang Aplikasi
+        </button>
+      </div>
+
+      <nav class="tabs" role="tablist" aria-label="Jenis transaksi">
+        <button id="tab-umum" role="tab" aria-selected="true"
+          aria-controls="panel" data-tab="umum">Umum</button>
+        <button id="tab-ewallet" role="tab" aria-selected="false"
+          aria-controls="panel" data-tab="ewallet" tabindex="-1">Ewallet</button>
+        <button id="tab-token" role="tab" aria-selected="false"
+          aria-controls="panel" data-tab="token" tabindex="-1">Token Listrik</button>
+        <button id="tab-tagihan" role="tab" aria-selected="false"
+          aria-controls="panel" data-tab="tagihan" tabindex="-1">Tagihan Listrik</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="card" id="panel" role="tabpanel"
+      aria-labelledby="tab-umum">
+      <h2>Detail transaksi</h2>
+      <p class="hint">Isi data transaksi. Pratinjau diperbarui otomatis.</p>
+      <form id="form" autocomplete="off" novalidate></form>
+    </section>
+
+    <section class="card preview-section" aria-labelledby="preview-title">
+      <div class="preview-heading">
+        <h2 id="preview-title">Pratinjau struk</h2>
+        <span>58 mm</span>
+      </div>
+      <div class="receipt-stage">
+        <canvas id="receipt" role="img"
+          aria-label="Pratinjau struk transaksi RPayment"></canvas>
+      </div>
+      <div class="actions">
+        <button type="button" id="download" class="primary">Unduh PNG</button>
+        <button type="button" id="share" class="secondary">Bagikan ke WhatsApp</button>
+      </div>
+      <p class="hint">Saat menu berbagi muncul, pilih WhatsApp.</p>
+    </section>
+  </main>
+
+  <p id="status" class="status" role="status" aria-live="polite" hidden></p>
+
+  <dialog id="install-dialog">
+    <h2>Pasang RPayment</h2>
+    <p id="install-instructions"></p>
+    <form method="dialog">
+      <button class="primary">Mengerti</button>
+    </form>
+  </dialog>
+</body>
+</html>

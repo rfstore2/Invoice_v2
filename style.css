@@ -1,0 +1,272 @@
+:root {
+  color-scheme: light only;
+  --primary: #243195;
+  --text: #091254;
+  --muted: #626b80;
+  --border: #dce1ed;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f3f5fa;
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f5fa;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #e4ae00;
+  outline-offset: 3px;
+}
+
+.header {
+  background: var(--primary);
+  color: #fff;
+  padding: 22px 16px 0;
+}
+
+.header-inner,
+main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.heading,
+.preview-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.heading p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #e1e5ff;
+}
+
+.install {
+  background: #fff;
+  color: var(--primary);
+  border: 0;
+  border-radius: 10px;
+  padding: 11px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  min-height: 44px;
+}
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  margin-top: 24px;
+}
+
+.tabs button {
+  min-height: 52px;
+  padding: 10px 4px;
+  border: 0;
+  border-bottom: 4px solid transparent;
+  background: transparent;
+  color: #e1e5ff;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.tabs button[aria-selected="true"] {
+  color: #fff;
+  background: #ffffff17;
+  border-bottom-color: #f9c30b;
+  border-radius: 9px 9px 0 0;
+}
+
+main {
+  display: grid;
+  gap: 18px;
+  padding: 20px 14px 40px;
+  align-items: start;
+}
+
+.card {
+  padding: 20px 16px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+  min-width: 0;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0 0 18px;
+}
+
+.field {
+  display: block;
+  margin: 17px 0 0;
+}
+
+.field span {
+  display: block;
+  font-size: 13px;
+  font-weight: 650;
+  margin-bottom: 7px;
+}
+
+.field input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 47px;
+  padding: 10px 12px;
+  border: 1px solid #cbd2e2;
+  border-radius: 9px;
+  background: #fff;
+  color: #111827;
+  font-size: 16px;
+}
+
+.field input[readonly] {
+  background: #edf0fc;
+  color: var(--primary);
+  font-weight: 750;
+}
+
+.field input[aria-invalid="true"] {
+  border-color: #c32f2f;
+}
+
+.preview-heading span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.receipt-stage {
+  display: flex;
+  justify-content: center;
+  padding: 25px 8px;
+  margin: 14px 0 20px;
+  background: #e9edf3;
+  border-radius: 10px;
+  overflow: auto;
+}
+
+#receipt {
+  display: block;
+  width: 58mm;
+  max-width: 100%;
+  height: auto;
+  background: #fff;
+  box-shadow: 0 4px 16px #17223c18;
+}
+
+.actions {
+  display: grid;
+  gap: 10px;
+}
+
+.primary,
+.secondary {
+  min-height: 46px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.primary {
+  background: var(--primary);
+  border: 1px solid var(--primary);
+  color: #fff;
+}
+
+.secondary {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background: #fff;
+}
+
+button:disabled {
+  opacity: .6;
+  cursor: wait;
+}
+
+.actions + .hint {
+  margin: 12px 0 0;
+}
+
+.status {
+  position: fixed;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(92vw, 500px);
+  width: max-content;
+  margin: 0;
+  padding: 13px 18px;
+  border-radius: 12px;
+  background: #152044;
+  color: #fff;
+  font-size: 13px;
+  box-shadow: 0 4px 20px #0002;
+  z-index: 10;
+}
+
+dialog {
+  width: min(90vw, 420px);
+  border: 0;
+  border-radius: 16px;
+  padding: 24px;
+  color: var(--text);
+  background: #fff;
+}
+
+dialog::backdrop {
+  background: #0b143980;
+}
+
+dialog p {
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+@media (min-width: 760px) {
+  main {
+    grid-template-columns: 1fr 1fr;
+    padding-top: 28px;
+  }
+
+  .card {
+    padding: 24px;
+  }
+
+  .tabs button {
+    font-size: 14px;
+  }
+}
